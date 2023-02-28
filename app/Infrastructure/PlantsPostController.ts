@@ -1,9 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { CreatePlant } from 'src/plants/Application/Create/CreatePlant.service';
+import { CreatePlant } from 'src/plants/Application/Create/CreatePlant';
 import { CreatePlantDTO } from 'src/plants/Application/Create/CreatePlantDTO';
 
 @Controller('plants')
-export class PostPlantsController {
+export class PlantsPostController {
   constructor(private readonly plantCreator: CreatePlant) {}
 
   @Post()
