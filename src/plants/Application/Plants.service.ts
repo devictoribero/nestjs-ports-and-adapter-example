@@ -1,18 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { Plant } from '../Domain/Plant';
+import { InMemoryPlantsRepository } from '../Infrastructure/InMemoryPlantsRepository.service';
 import { CreatePlantDTO } from './CreatePlantDTO';
 
 @Injectable()
 export class Plants {
-  private plants: Plant[] = [{ uuid: '1', name: 'Monstera Deliciosa' }];
-
-  public async findAll(): Promise<Plant[]> {
-    return this.plants;
-  }
-
-  public async find(uuid: string): Promise<Plant | null> {
-    return this.plants.find((plant) => plant.uuid === uuid) || null;
-  }
+  constructor(private readonly plantsRepository: InMemoryPlantsRepository) {}
 
   public async create(createPlantDTO: CreatePlantDTO): Promise<void> {
     // This should be a Domain Entity
@@ -21,6 +14,14 @@ export class Plants {
       name: createPlantDTO.name,
     };
 
-    this.plants.push(plantToCreate as Plant);
+    this.plantsRepository.create(plantToCreate as Plant);
+  }
+
+  public async findAll(): Promise<Plant[]> {
+    return this.plantsRepository.search();
+  }
+
+  public async find(uuid: string): Promise<Plant | null> {
+    return this.plantsRepository.find(uuid);
   }
 }
