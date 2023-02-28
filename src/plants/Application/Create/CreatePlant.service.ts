@@ -7,12 +7,9 @@ import { CreatePlantDTO } from './CreatePlantDTO';
 export class CreatePlant {
   constructor(private readonly plantsRepository: InMemoryPlantsRepository) {}
 
-  public async execute(createPlantDTO: CreatePlantDTO): Promise<void> {
+  public async execute({ uuid, name }: CreatePlantDTO): Promise<void> {
     // This should be a Domain Entity
-    const plantToCreate = {
-      uuid: createPlantDTO.uuid,
-      name: createPlantDTO.name,
-    };
+    const plantToCreate = new Plant(uuid, name);
 
     this.plantsRepository.create(plantToCreate as Plant);
   }
