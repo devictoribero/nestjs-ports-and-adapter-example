@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository.service';
 import { Plant } from '../../Domain/Plant';
-import { InMemoryPlantsRepository } from '../../Infrastructure/Persistance/InMemoryPlantsRepository.service';
 
 @Injectable()
 export class SearchPlants {
