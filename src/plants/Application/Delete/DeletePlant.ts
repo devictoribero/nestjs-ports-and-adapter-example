@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InMemoryPlantsRepository } from '../../Infrastructure/Persistance/InMemoryPlantsRepository.service';
+import { InMemoryPlantsRepository } from '../../Infrastructure/Persistance/InMemoryPlantsRepository';
 
 @Injectable()
 export class DeletePlant {

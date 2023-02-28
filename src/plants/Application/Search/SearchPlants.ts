@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository.service';
+import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository';
 import { Plant } from '../../Domain/Plant';
 
 @Injectable()

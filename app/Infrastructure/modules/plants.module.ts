@@ -4,7 +4,7 @@ import { DeletePlant } from 'src/plants/Application/Delete/DeletePlant';
 import { FindPlant } from 'src/plants/Application/Find/FindPlant';
 import { SearchPlants } from 'src/plants/Application/Search/SearchPlants';
 import { UpdatePlant } from 'src/plants/Application/Update/UpdatePlant';
-import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository.service';
+import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository';
 import { PlantGetController } from '../controllers/plants/PlantGetController';
 import { PlantsDeleteController } from '../controllers/plants/PlantsDeleteController';
 import { PlantsGetController } from '../controllers/plants/PlantsGetController';
