@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { Uuid } from 'src/shared/Domain/Uuid';
 import { Plant } from '../../Domain/Plant';
 import { PlantsRepository } from '../../Domain/PlantsRepository';
 
 type PlantsCollection = Map<string, Plant>;
 
 const initialPlant = new Plant(
-  'd578670e-365d-4bd1-b9bb-bd9bfe841428',
+  Uuid.fromString('d578670e-365d-4bd1-b9bb-bd9bfe841428'),
   'Monstera Deliciosa',
 );
 

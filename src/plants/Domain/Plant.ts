@@ -1,11 +1,13 @@
+import { Uuid } from 'src/shared/Domain/Uuid';
+
 export class Plant {
-  constructor(private uuid: string, private name: string) {}
+  constructor(private uuid: Uuid, private name: string) {}
 
   public getUuid(): string {
-    return this.uuid;
+    return this.uuid.toString();
   }
 
   public isSamePlantAs(uuid: string): boolean {
-    return this.uuid === uuid;
+    return this.getUuid() === uuid;
   }
 }
