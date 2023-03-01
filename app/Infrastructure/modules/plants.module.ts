@@ -4,6 +4,7 @@ import { DeletePlant } from 'src/plants/Application/Delete/DeletePlant';
 import { FindPlant } from 'src/plants/Application/Find/FindPlant';
 import { SearchPlants } from 'src/plants/Application/Search/SearchPlants';
 import { UpdatePlant } from 'src/plants/Application/Update/UpdatePlant';
+import { PLANTS_REPOSITORY_TOKEN } from 'src/plants/Domain/PlantsRepository';
 import { InMemoryPlantsRepository } from 'src/plants/Infrastructure/Persistance/InMemoryPlantsRepository';
 import { PlantGetController } from '../controllers/plants/PlantGetController';
 import { PlantsDeleteController } from '../controllers/plants/PlantsDeleteController';
@@ -34,7 +35,10 @@ import { PlantsPutController } from '../controllers/plants/PlantsPutController';
     CreatePlant,
     UpdatePlant,
     DeletePlant,
-    InMemoryPlantsRepository,
+    {
+      useClass: InMemoryPlantsRepository,
+      provide: PLANTS_REPOSITORY_TOKEN,
+    },
   ],
   // Exports
   // Services that will be available to other modules
