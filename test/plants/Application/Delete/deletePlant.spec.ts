@@ -4,7 +4,7 @@ import { Uuid } from 'src/shared/Domain/Uuid';
 import { EmptyPlantsRepository } from '../../Infrastructure/Persistance/EmptyPlantsRepository';
 
 describe('DeletePlant', () => {
-  it('should create a plant', async () => {
+  it('should delete a plant', async () => {
     // Given a plant we want to create
     const repository = new EmptyPlantsRepository();
     const deletePlant = new DeletePlant(repository);
