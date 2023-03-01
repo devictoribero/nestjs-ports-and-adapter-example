@@ -1,5 +1,7 @@
 import { Plant } from './Plant';
 
+export const PLANTS_REPOSITORY_TOKEN = 'PLANTS_REPOSITORY';
+
 export interface PlantsRepository {
   save(plant: Plant): Promise<void>;
 
