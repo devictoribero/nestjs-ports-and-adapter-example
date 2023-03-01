@@ -3,6 +3,7 @@ import {
   PlantsRepository,
   PLANTS_REPOSITORY_TOKEN,
 } from 'src/plants/Domain/PlantsRepository';
+import { Uuid } from 'src/shared/Domain/Uuid';
 import { Plant } from '../../Domain/Plant';
 import { UpdatePlantDTO } from './UpdatePlantDTO';
 
@@ -14,7 +15,7 @@ export class UpdatePlant {
   ) {}
 
   public async execute({ uuid, name }: UpdatePlantDTO): Promise<void> {
-    const plantToUpdate = new Plant(uuid, name);
+    const plantToUpdate = new Plant(Uuid.fromString(uuid), name);
 
     this.plantsRepository.save(plantToUpdate as Plant);
   }
