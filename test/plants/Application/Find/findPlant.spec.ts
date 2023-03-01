@@ -12,7 +12,7 @@ describe('FindPlant', () => {
 
     await findPlant.execute(plantUUid);
 
-    expect(repository.save).toHaveBeenCalledTimes(1);
-    expect(repository.save).toBeCalledWith(plantUUid);
+    expect(repository.find).toHaveBeenCalledTimes(1);
+    expect(repository.find).toBeCalledWith(plantUUid);
   });
 });
