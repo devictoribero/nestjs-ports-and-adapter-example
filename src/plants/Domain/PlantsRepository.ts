@@ -5,7 +5,7 @@ export const PLANTS_REPOSITORY_TOKEN = 'PLANTS_REPOSITORY';
 export interface PlantsRepository {
   save(plant: Plant): Promise<void>;
 
-  find(uuid: string): Promise<Plant | null>;
+  find(uuid: string): Promise<Plant>;
 
   search(): Promise<Plant[] | null>;
 
