@@ -4,4 +4,8 @@ export class Plant {
   public getUuid(): string {
     return this.uuid;
   }
+
+  public isSamePlantAs(uuid: string): boolean {
+    return this.uuid === uuid;
+  }
 }
